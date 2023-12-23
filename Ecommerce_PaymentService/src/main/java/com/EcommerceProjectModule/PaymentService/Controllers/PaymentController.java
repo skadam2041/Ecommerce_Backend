@@ -18,4 +18,9 @@ public class PaymentController {
     public String initiatePayment(@RequestBody InitiatePaymentRequestDTO initiatePaymentRequestDTO){
         return paymentService.initiatePayment(initiatePaymentRequestDTO);
     }
+
+    @PostMapping("/callback")
+    public String paymentCallback(@RequestBody String paymentResponse){
+        return paymentService.paymentCallback(paymentResponse);
+    }
 }
