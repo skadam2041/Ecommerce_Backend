@@ -34,7 +34,7 @@ public class StripePG implements IPaymentGateway {
         }
 
         Map<String, Object> params1 = new HashMap<>();
-        params1.put("unit_amount", order.getAddress());
+        params1.put("unit_amount", order.getTotalAmount());
         params1.put("currency", "usd");
         params1.put("product", product.getId());
 
@@ -58,7 +58,7 @@ public class StripePG implements IPaymentGateway {
 
 
         Map<String, Object> redirect = new HashMap<>();
-        redirect.put("url", "https://scaler.com/");
+        redirect.put("url", "http://localhost:8090/stripePayment/callbackStatus/{CHECKOUT_SESSION_ID}");
 //        redirect.put("url", "https://scaler.com?payment_id={CHECKOUT_SESSION_ID}");
 
         Map<String, Object> afterComp = new HashMap<>();

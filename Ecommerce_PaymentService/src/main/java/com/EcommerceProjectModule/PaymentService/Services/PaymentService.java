@@ -25,7 +25,4 @@ public class PaymentService {
         return paymentGateway.generatePaymentLink(order);
     }
 
-    public String paymentCallback(String paymentResponse) {
-        return "Payment Successful";
-    }
 }
